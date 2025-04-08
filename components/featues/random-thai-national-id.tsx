@@ -26,7 +26,7 @@ export default function RandomThaiNationalID({ }: RandomThaiNationalIDProps) {
     <Card className='min-w-[766px] min-h-[154px]'>
       <CardHeader>
         <CardTitle>Thai National ID</CardTitle>
-        <CardDescription>Your Thai National id:</CardDescription>
+        <CardDescription>Your Thai National ID:</CardDescription>
       </CardHeader>
       <CardContent className='flex items-center justify-between gap-2'>
         {!thaiNationalID ? (
