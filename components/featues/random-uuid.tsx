@@ -11,6 +11,7 @@ import CopyButton from "@/components/common/copy-button";
 
 // icons
 import { Shuffle } from "lucide-react";
+import Code from "@/components/ui/code";
 
 export default function RandomUUID() {
   const [uuid, setUUID] = useState<string>("");
@@ -31,15 +32,13 @@ export default function RandomUUID() {
         ) : (
           <>
             <div className="w-full">
-              <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono font-semibold text-xl w-full block text-center">
-                {uuid}
-              </code>
+              <Code>{uuid}</Code>
             </div>
             <div className="flex items-center gap-2">
               <CopyButton
                 className="w-1/2 min-w-[106px]"
                 copyContent={{ content: uuid, contentType: "text/plain" }}
-                />
+              />
               <Button className="w-1/2 min-w-[106px]" variant={"outline"} onClick={() => setUUID(crypto.randomUUID())}>
                 <Shuffle />
                 Generate
