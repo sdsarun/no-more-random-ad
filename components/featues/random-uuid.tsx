@@ -4,16 +4,21 @@
 import { useEffect, useState } from "react";
 
 // components
+import CopyButton from "@/components/common/copy-button";
+import Code from "@/components/ui/code";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loading } from "@/components/ui/loading";
-import CopyButton from "@/components/common/copy-button";
 
 // icons
 import { Shuffle } from "lucide-react";
-import Code from "@/components/ui/code";
+import { cn } from "@/lib/utils";
 
-export default function RandomUUID() {
+export type RandomUUIDProps = {
+  rootClassName?: string;
+}
+
+export default function RandomUUID({ rootClassName }: RandomUUIDProps) {
   const [uuid, setUUID] = useState<string>("");
 
   useEffect(() => {
@@ -21,7 +26,7 @@ export default function RandomUUID() {
   }, []);
 
   return (
-    <Card className="min-w-[766px] min-h-[154px]">
+    <Card className={cn("min-w-[766px] min-h-[154px]", rootClassName)}>
       <CardHeader>
         <CardTitle>UUID v4</CardTitle>
         <CardDescription>Your Version 4 UUID:</CardDescription>
