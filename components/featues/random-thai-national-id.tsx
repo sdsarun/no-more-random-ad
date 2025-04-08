@@ -1,29 +1,31 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 // components
-import Code from '@/components/ui/code';
 import CopyButton from '@/components/common/copy-button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loading } from '@/components/ui/loading';
+import Code from '@/components/ui/code';
 import { Button } from '@/components/ui/button';
-import { Shuffle } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
+import { Loading } from '@/components/ui/loading';
+import { Shuffle } from 'lucide-react';
 
 // utils
 import randomThaiNationalID from '@/utils/random-thai-national-id';
 
 export type RandomThaiNationalIDProps = any;
 
-type CopyOptions = {
-  copyWithFormat: boolean;
+type RandomOptions = {
+  includeDashes: boolean;
 }
 
 export default function RandomThaiNationalID({ }: RandomThaiNationalIDProps) {
   const [thaiNationalID, setThaiNationalID] = useState<string>("");
-  const [copyOptions, setCopyOptioins] = useState<CopyOptions>({ copyWithFormat: false });
+  const [randomOptions, setRandomOptions] = useState<RandomOptions>({ includeDashes: false });
+
+  const formattedThaiNationalID = randomOptions.includeDashes ? thaiNationalID : thaiNationalID.replaceAll("-", "");
 
   useEffect(() => {
     setThaiNationalID(randomThaiNationalID());
@@ -42,12 +44,12 @@ export default function RandomThaiNationalID({ }: RandomThaiNationalIDProps) {
           <div className='flex-1 flex flex-col gap-2'>
             <div className='flex items-center justify-between gap-2'>
               <div className="w-full">
-                <Code>{thaiNationalID}</Code>
+                <Code>{formattedThaiNationalID}</Code>
               </div>
               <div className="flex items-center gap-2">
                 <CopyButton
                   className="w-1/2 min-w-[106px]"
-                  copyContent={{ content: copyOptions.copyWithFormat ? thaiNationalID : thaiNationalID.replaceAll("-", ""), contentType: "text/plain" }}
+                  copyContent={{ content: formattedThaiNationalID, contentType: "text/plain" }}
                 />
                 <Button className="w-1/2 min-w-[106px]" variant={"outline"} onClick={() => setThaiNationalID(randomThaiNationalID())}>
                   <Shuffle />
@@ -59,10 +61,10 @@ export default function RandomThaiNationalID({ }: RandomThaiNationalIDProps) {
               <Checkbox
                 id='copy-with-format'
                 name='copy-with-format'
-                checked={copyOptions.copyWithFormat}
-                onCheckedChange={(checked) => setCopyOptioins((prevOptions) => ({ ...prevOptions, copyWithFormat: checked as boolean }))}
+                checked={randomOptions.includeDashes}
+                onCheckedChange={(checked) => setRandomOptions((prevOptions) => ({ ...prevOptions, includeDashes: checked as boolean }))}
               />
-              <Label htmlFor='copy-with-format'>Copy with format</Label>
+              <Label htmlFor='copy-with-format'>Include dashes in the ID</Label>
             </div>
           </div>
         )}
