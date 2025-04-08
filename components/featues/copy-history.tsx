@@ -7,6 +7,8 @@ import CopyButton from '@/components/common/copy-button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Loading } from '@/components/ui/loading'
 import { Separator } from '@/components/ui/separator'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { Info } from 'lucide-react'
 
 // hooks
 import { useCopyHistory } from '@/components/providers/copy-history'
@@ -16,10 +18,14 @@ import useIsMounted from '@/hooks/use-is-mounted'
 import dayjs from '@/lib/dayjs'
 import { cn } from '@/lib/utils'
 import getMotivationalHistoryMessage from '@/utils/motivational-history-messages'
-import { Info } from 'lucide-react'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
-export default function CopyHistory() {
+export type CopyHistoryProps = {
+  rootClassName?: string;
+}
+
+export default function CopyHistory({
+  rootClassName
+}: CopyHistoryProps) {
   const isMounted = useIsMounted();
   const { copyHistoryList } = useCopyHistory();
 
@@ -27,7 +33,7 @@ export default function CopyHistory() {
 
   if (!isMounted) {
     return (
-      <Card className='min-w-[766px] min-h-[154px]'>
+      <Card className={cn('min-w-[766px] min-h-[154px]', rootClassName)}>
         <CardHeader>
           <CardTitle>History</CardTitle>
           <CardDescription></CardDescription>
@@ -40,7 +46,7 @@ export default function CopyHistory() {
   }
 
   return (
-    <Card className='min-w-[766px] min-h-[154px]'>
+    <Card className={cn('min-w-[766px] min-h-[154px]', rootClassName)}>
       <CardHeader>
         <CardTitle className='flex items-center gap-2'>
           History

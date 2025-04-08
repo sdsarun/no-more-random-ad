@@ -4,15 +4,21 @@
 import { useEffect, useState } from "react";
 
 // components
+import CopyButton from "@/components/common/copy-button";
+import Code from "@/components/ui/code";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loading } from "@/components/ui/loading";
-import CopyButton from "@/components/common/copy-button";
 
 // icons
 import { Shuffle } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-export default function RandomUUID() {
+export type RandomUUIDProps = {
+  rootClassName?: string;
+}
+
+export default function RandomUUID({ rootClassName }: RandomUUIDProps) {
   const [uuid, setUUID] = useState<string>("");
 
   useEffect(() => {
@@ -20,7 +26,7 @@ export default function RandomUUID() {
   }, []);
 
   return (
-    <Card className="min-w-[766px] min-h-[154px]">
+    <Card className={cn("min-w-[766px] min-h-[154px]", rootClassName)}>
       <CardHeader>
         <CardTitle>UUID v4</CardTitle>
         <CardDescription>Your Version 4 UUID:</CardDescription>
@@ -31,15 +37,13 @@ export default function RandomUUID() {
         ) : (
           <>
             <div className="w-full">
-              <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono font-semibold text-xl w-full block text-center">
-                {uuid}
-              </code>
+              <Code>{uuid}</Code>
             </div>
             <div className="flex items-center gap-2">
               <CopyButton
                 className="w-1/2 min-w-[106px]"
                 copyContent={{ content: uuid, contentType: "text/plain" }}
-                />
+              />
               <Button className="w-1/2 min-w-[106px]" variant={"outline"} onClick={() => setUUID(crypto.randomUUID())}>
                 <Shuffle />
                 Generate
