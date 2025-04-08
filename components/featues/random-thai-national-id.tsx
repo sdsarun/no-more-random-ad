@@ -14,14 +14,17 @@ import { Shuffle } from 'lucide-react';
 
 // utils
 import randomThaiNationalID from '@/utils/random-thai-national-id';
+import { cn } from '@/lib/utils';
 
-export type RandomThaiNationalIDProps = any;
+export type RandomThaiNationalIDProps = {
+  rootClassName?: string;
+};
 
 type RandomOptions = {
   includeDashes: boolean;
 }
 
-export default function RandomThaiNationalID({ }: RandomThaiNationalIDProps) {
+export default function RandomThaiNationalID({ rootClassName }: RandomThaiNationalIDProps) {
   const [thaiNationalID, setThaiNationalID] = useState<string>("");
   const [randomOptions, setRandomOptions] = useState<RandomOptions>({ includeDashes: false });
 
@@ -32,7 +35,7 @@ export default function RandomThaiNationalID({ }: RandomThaiNationalIDProps) {
   }, []);
 
   return (
-    <Card className='min-w-[766px] min-h-[154px]'>
+    <Card className={cn('min-w-[766px] min-h-[154px]', rootClassName)}>
       <CardHeader>
         <CardTitle>Thai National ID</CardTitle>
         <CardDescription>Your Thai National ID:</CardDescription>
