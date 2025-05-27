@@ -33,7 +33,7 @@ export default function CopyHistory({
 
   if (!isMounted) {
     return (
-      <Card className={cn('min-w-[766px] min-h-[154px]', rootClassName)}>
+      <Card className={cn('md:min-w-[766px] md:min-h-[154px]', rootClassName)}>
         <CardHeader>
           <CardTitle>History</CardTitle>
           <CardDescription></CardDescription>
@@ -46,7 +46,7 @@ export default function CopyHistory({
   }
 
   return (
-    <Card className={cn('min-w-[766px] min-h-[154px]', rootClassName)}>
+    <Card className={cn('md:min-w-[766px] md:min-h-[154px]', rootClassName)}>
       <CardHeader>
         <CardTitle className='flex items-center gap-2'>
           History
@@ -62,7 +62,7 @@ export default function CopyHistory({
         <CardDescription>{historyDescriptionRef.current}</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className={cn('min-h-80 max-h-80 overflow-auto flex flex-col', { "justify-center items-center": copyHistoryList.length === 0 })}>
+        <div className={cn('md:min-h-80 md:max-h-80 overflow-auto flex flex-col', { "justify-center items-center": copyHistoryList.length === 0 })}>
           {copyHistoryList.length === 0 ? (
             <p className='text-muted-foreground '>No copies yet? Your history will appear here when you start copying!</p>
           ) : copyHistoryList.map(({ id, content, contentType, copyAt }) => (
