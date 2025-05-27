@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/sdsarun/no-more-random-ad/compare/v0.1.0...v0.1.1) (2025-05-27)
+
+
+### Bug Fixes
+
+* **convert-thai-code:** reset code name when clear ([5937224](https://github.com/sdsarun/no-more-random-ad/commit/59372242d9be21e98a40356cb3452a2877c1d21c))
+
+### [0.0.3](https://github.com/sdsarun/no-more-random-ad/compare/v0.0.2...v0.0.3) (2025-04-09)
+
+### [0.0.2](https://github.com/sdsarun/no-more-random-ad/compare/v0.0.1...v0.0.2) (2025-04-08)
+
 ## [0.1.0](https://github.com/sdsarun/no-more-random-ad/compare/v0.0.1...v0.1.0) (2025-05-27)
 ### [0.0.3](https://github.com/sdsarun/no-more-random-ad/compare/v0.0.2...v0.0.3) (2025-04-09)
 
