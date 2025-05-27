@@ -1,5 +1,6 @@
 // components
 import CopyHistory from "@/components/featues/copy-history";
+import RandomThaiCodeName from "@/components/featues/random-thai-code-name";
 import RandomThaiNationalID from "@/components/featues/random-thai-national-id";
 import RandomUUID from "@/components/featues/random-uuid";
 
@@ -11,6 +12,7 @@ export default function Home() {
         <section className="flex flex-col gap-4">
           <RandomUUID />
           <RandomThaiNationalID />
+          <RandomThaiCodeName />
         </section>
         <section className="h-full">
           <CopyHistory rootClassName="min-h-auto" />
