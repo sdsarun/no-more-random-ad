@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ## [0.1.0](https://github.com/sdsarun/no-more-random-ad/compare/v0.0.1...v0.1.0) (2025-05-27)
+### [0.0.3](https://github.com/sdsarun/no-more-random-ad/compare/v0.0.2...v0.0.3) (2025-04-09)
+
+### [0.0.2](https://github.com/sdsarun/no-more-random-ad/compare/v0.0.1...v0.0.2) (2025-04-08)
 
 
 ### Features
@@ -11,6 +14,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **convert-thai-code:** done features ([2f97253](https://github.com/sdsarun/no-more-random-ad/commit/2f97253c6425a0d2f0669fc429435956b782ba5c))
 * **copy-history:** add pass props to config root container ([b82ef6c](https://github.com/sdsarun/no-more-random-ad/commit/b82ef6c732c20e0bbe4e287557cd152ddca45e3b))
 * **copy-history:** add use writeText first then fallback to original ([61da66c](https://github.com/sdsarun/no-more-random-ad/commit/61da66c0eb174f5271e6bb26d5332f5b6aad2b53))
+* **copy-history:** add pass props to config root container ([b82ef6c](https://github.com/sdsarun/no-more-random-ad/commit/b82ef6c732c20e0bbe4e287557cd152ddca45e3b))
 * **libs:** add label component ([804f999](https://github.com/sdsarun/no-more-random-ad/commit/804f9992d0b95141573814d236900003165ca808))
 * **libs:** add label component ([71271cb](https://github.com/sdsarun/no-more-random-ad/commit/71271cb5e80f954bc6cf3806b4f4ae4d260699f7))
 * **random-thai-national-id:** add copy options ([46be868](https://github.com/sdsarun/no-more-random-ad/commit/46be868cc8fc2a6ad0181d6cd8cc645bb790548c))
@@ -24,6 +28,9 @@ All notable changes to this project will be documented in this file. See [standa
 * **ui:** add input ([7be4ca6](https://github.com/sdsarun/no-more-random-ad/commit/7be4ca67e11126ffdada83d08c234cf35eca5422))
 * **ui:** add label component ([a72f01d](https://github.com/sdsarun/no-more-random-ad/commit/a72f01d84c797ed9001f2c2902e6bb80a42bb865))
 * **ui:** add radio group ([1a16266](https://github.com/sdsarun/no-more-random-ad/commit/1a162669687d3f033496a507bf475036b5b4006d))
+* **ui:** add checkbox ([cd5e24b](https://github.com/sdsarun/no-more-random-ad/commit/cd5e24bfea7a4c0aa646bf0c5fd9f7715922ee9d))
+* **ui:** add code component ([fc6cc53](https://github.com/sdsarun/no-more-random-ad/commit/fc6cc53d6ac5afa58b7e09aebcd41e280b8ebfa4))
+* **ui:** add label component ([a72f01d](https://github.com/sdsarun/no-more-random-ad/commit/a72f01d84c797ed9001f2c2902e6bb80a42bb865))
 
 
 ### Bug Fixes
