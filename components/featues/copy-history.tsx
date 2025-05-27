@@ -62,7 +62,7 @@ export default function CopyHistory({
         <CardDescription>{historyDescriptionRef.current}</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className={cn('md:min-h-80 md:max-h-80 overflow-auto flex flex-col', { "justify-center items-center": copyHistoryList.length === 0 })}>
+        <div className={cn('h-[calc(100dvh-640px)] overflow-auto flex flex-col', { "justify-center items-center": copyHistoryList.length === 0 })}>
           {copyHistoryList.length === 0 ? (
             <p className='text-muted-foreground '>No copies yet? Your history will appear here when you start copying!</p>
           ) : copyHistoryList.map(({ id, content, contentType, copyAt }) => (
@@ -70,8 +70,18 @@ export default function CopyHistory({
               <div className='flex items-center justify-between pr-4'>
                 {/* left content */}
                 <div className='flex flex-col'>
-                  <h3>{content}</h3>
-                  <p className='text-xs text-muted-foreground' title={dayjs(copyAt).format()}>{dayjs(copyAt).fromNow()}</p>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <h3
+                        className="truncate cursor-default max-w-[180px] sm:max-w-[240px] md:max-w-[320px] lg:max-w-[420px]"
+                        title={content}
+                      >{content}</h3>
+                    </TooltipTrigger>
+                    <TooltipContent className="break-words max-w-[200px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px]">{content}</TooltipContent>
+                  </Tooltip>
+                  <p className='text-xs text-muted-foreground' title={dayjs(copyAt).format()}>
+                    {dayjs(copyAt).fromNow()}
+                  </p>
                 </div>
                 {/* right content */}
                 <div>
@@ -89,6 +99,6 @@ export default function CopyHistory({
           ))}
         </div>
       </CardContent>
-    </Card>
+    </Card >
   )
 }
