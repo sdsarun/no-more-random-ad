@@ -30,8 +30,10 @@ export default function CopyButton({ copyContent, showIcon = true, showCopyText 
   return (
     <Button
       onClick={() => {
-        const clipboardItem = new ClipboardItem({ [copyContent?.contentType || "text/plain"]: copyContent?.content });
-        copyToClipboard([clipboardItem], { storeInHistory});
+        const blob = new Blob([copyContent?.content], { type: copyContent?.contentType || "text/plain" });
+        const clipboardItem = new ClipboardItem({ [blob.type]: blob });
+        copyToClipboard([clipboardItem], { storeInHistory });
+
         setIsCopy(true);
         copyTimeoutRef.current = setTimeout(() => {
           setIsCopy(false);
