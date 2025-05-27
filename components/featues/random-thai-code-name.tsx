@@ -201,6 +201,8 @@ export default function RandomThaiCodeName({
                       form.resetField("firstName");
                       form.resetField("lastName");
                       form.resetField("codeName");
+                      handleFieldChange("firstName", "");
+                      handleFieldChange("lastName", "");
                     }}
                   >
                     <Brush />
