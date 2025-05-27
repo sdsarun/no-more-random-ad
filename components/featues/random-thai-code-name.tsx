@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as y from "yup"
@@ -98,8 +98,12 @@ export default function RandomThaiCodeName({
     updateCodeNameDebounced(payloadGenerateCodeName);
   }
 
+  useEffect(() => {
+    updateCodeNameDebounced(form.getValues());
+  }, []);
+
   return (
-    <Card className={cn('min-w-[766px] min-h-[250px]', rootClassName)}>
+    <Card className={cn('md:min-w-[766px] md:min-h-[154px]', rootClassName)}>
       <CardHeader>
         <CardTitle>Thai Code Name</CardTitle>
         <CardDescription>Your Thai Code Name:</CardDescription>
@@ -117,7 +121,7 @@ export default function RandomThaiCodeName({
                   name='ownerType'
                   render={({ field }) => (
                     <ButtonSelectGroup
-                      rootClassName='grid grid-cols-3 gap-2'
+                      rootClassName='grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-2'
                       items={ownerTypes}
                       defaultValue={[defaultOwnerType]}
                       onChange={([selectedOwnerType]) => {
@@ -206,15 +210,16 @@ export default function RandomThaiCodeName({
               </Tooltip>
             </div>
             <div className='flex-1 flex flex-col gap-2'>
-              <div className='flex flex-col items-center md:flex-row gap-2'>
-                <div className="w-full">
-                  <Code className='break-words'>{codeName || "Enter your name!"}</Code>
+              <div className='flex flex-col items-center md:flex-row gap-2 flex-wrap'>
+                <div className="w-full flex-1">
+                  <Code className='break-words'>{codeName || "Loading..."}</Code>
                 </div>
                 <div className="w-full md:w-auto">
                   {isLoading ? <Loading className="w-full md:w-1/2 min-w-[106px]" loadingText /> : (
                     <CopyButton
                       className="w-full md:w-1/2 md:min-w-[106px]"
                       copyContent={{ content: codeName, contentType: "text/plain" }}
+                      disabled={codeName ? false : true}
                     />
                   )}
                 </div>
