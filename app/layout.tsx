@@ -5,6 +5,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ToggleTheme from "@/components/common/toggle-theme";
 import CopyRightAndPowerBy from "@/components/common/powerby";
+import { Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,10 +32,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-bl dark:from-gray-900 dark:to-black flex flex-col min-h-dvh p-2`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-bl dark:from-gray-900 dark:to-black flex flex-col min-h-dvh m-2`}
       >
         <Providers>
-          <ToggleTheme className="self-end" />
+          <header className="self-end flex items-center">
+            <Link href="https://github.com/sdsarun/no-more-random-ad" target="_blank">
+              <Button size="icon" variant="ghost"><Github /></Button>
+            </Link>
+            <ToggleTheme />
+          </header>
           {children}
         </Providers>
         <Toaster />

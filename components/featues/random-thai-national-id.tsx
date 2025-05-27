@@ -35,7 +35,7 @@ export default function RandomThaiNationalID({ rootClassName }: RandomThaiNation
   }, []);
 
   return (
-    <Card className={cn('min-w-[766px] min-h-[154px]', rootClassName)}>
+    <Card className={cn('md:min-w-[766px] md:min-h-[154px]', rootClassName)}>
       <CardHeader>
         <CardTitle>Thai National ID</CardTitle>
         <CardDescription>Your Thai National ID:</CardDescription>
@@ -44,23 +44,23 @@ export default function RandomThaiNationalID({ rootClassName }: RandomThaiNation
         {!thaiNationalID ? (
           <Loading className="w-full" size="sm" />
         ) : (
-          <div className='flex-1 flex flex-col gap-2'>
-            <div className='flex items-center justify-between gap-2'>
+          <div className='flex-1 flex flex-col  md:justify-between gap-2'>
+            <div className='flex-1 w-full flex flex-col items-center justify-between gap-2 md:flex-row'>
               <div className="w-full">
                 <Code>{formattedThaiNationalID}</Code>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="w-full md:w-auto flex items-center gap-2">
                 <CopyButton
-                  className="w-1/2 min-w-[106px]"
+                  className="w-1/2 md:min-w-[106px]"
                   copyContent={{ content: formattedThaiNationalID, contentType: "text/plain" }}
                 />
-                <Button className="w-1/2 min-w-[106px]" variant={"outline"} onClick={() => setThaiNationalID(randomThaiNationalID())}>
+                <Button className="w-1/2 md:min-w-[106px]" variant={"outline"} onClick={() => setThaiNationalID(randomThaiNationalID())}>
                   <Shuffle />
                   Generate
                 </Button>
               </div>
             </div>
-            <div className='flex items-center gap-1'>
+            <div className='flex-1 flex items-center gap-1'>
               <Checkbox
                 id='copy-with-format'
                 name='copy-with-format'
