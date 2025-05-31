@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/sdsarun/no-more-random-ad/compare/v0.2.0...v0.3.0) (2025-05-31)
+
+
+### Bug Fixes
+
+* **build:** update calendar ([eb523ca](https://github.com/sdsarun/no-more-random-ad/commit/eb523cadfd3a0069c9cb6724319d60b568656576))
+
 ## [0.2.0](https://github.com/sdsarun/no-more-random-ad/compare/v0.1.1...v0.2.0) (2025-05-31)
 
 
