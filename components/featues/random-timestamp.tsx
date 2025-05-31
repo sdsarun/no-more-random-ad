@@ -124,7 +124,10 @@ export default function RandomTimestamp({
                       key={inputDateFormat}
                       variant="secondary"
                       size="sm"
-                      onClick={() => randomTimestamp({ ...form.getValues(), inputDateFormat })}
+                      onClick={() => {
+                        form.setValue("inputDateFormat", inputDateFormat);
+                        randomTimestamp({ ...form.getValues(), inputDateFormat })
+                      }}
                     >
                       {inputDateFormat}
                     </Button>
