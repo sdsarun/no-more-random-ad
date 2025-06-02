@@ -4,17 +4,21 @@
 import React, { useState } from 'react'
 
 // components
+import CopyButton from '@/components/common/copy-button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { Info, X } from 'lucide-react'
+import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 
 // hooks
 import { useCopyHistory } from '@/components/providers/copy-history';
-import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
-import { Button } from '@/components/ui/button';
-import dayjs from '@/lib/dayjs';
-import CopyButton from '@/components/common/copy-button';
-import { Separator } from '@/components/ui/separator';
+
+// utils
 import { cn } from '@/lib/utils';
+import dayjs from '@/lib/dayjs';
+
+dayjs.locale("en")
 
 type DrawerDialogCopyHistoryProps = React.PropsWithChildren<{
   drawerProps?: React.ComponentProps<typeof Drawer>;
@@ -85,7 +89,9 @@ export default function DrawerDialogCopyHistory({
                     <TooltipContent className="break-words max-w-[200px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px]">{content}</TooltipContent>
                   </Tooltip>
                   <p className='text-xs text-muted-foreground' title={dayjs(copyAt).format()}>
-                    {dayjs(copyAt).fromNow()}
+                    {dayjs().diff(copyAt, 'day') > 2
+                      ? dayjs(copyAt).format('D MMM YYYY h:mm A')
+                      : dayjs(copyAt).fromNow()}
                   </p>
                 </div>
                 {/* right content */}

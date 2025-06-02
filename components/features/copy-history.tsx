@@ -19,6 +19,8 @@ import dayjs from '@/lib/dayjs'
 import { cn } from '@/lib/utils'
 import getMotivationalHistoryMessage from '@/utils/motivational-history-messages'
 
+dayjs.locale("en")
+
 export type CopyHistoryProps = {
   rootClassName?: string;
 }
@@ -80,7 +82,9 @@ export default function CopyHistory({
                     <TooltipContent className="break-words max-w-[200px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px]">{content}</TooltipContent>
                   </Tooltip>
                   <p className='text-xs text-muted-foreground' title={dayjs(copyAt).format()}>
-                    {dayjs(copyAt).fromNow()}
+                    {dayjs().diff(copyAt, 'day') > 2
+                      ? dayjs(copyAt).format('D MMM YYYY h:mm A')
+                      : dayjs(copyAt).fromNow()}
                   </p>
                 </div>
                 {/* right content */}
