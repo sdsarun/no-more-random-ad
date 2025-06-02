@@ -1,9 +1,9 @@
 // components
-import CopyHistory from "@/components/featues/copy-history";
-import RandomThaiCodeName from "@/components/featues/random-thai-code-name";
-import RandomThaiNationalID from "@/components/featues/random-thai-national-id";
-import RandomTimestamp from "@/components/featues/random-timestamp";
-import RandomUUID from "@/components/featues/random-uuid";
+import CopyHistory from "@/components/features/copy-history";
+import RandomThaiCodeName from "@/components/features/random-thai-code-name";
+import RandomThaiNationalID from "@/components/features/random-thai-national-id";
+import RandomTimestamp from "@/components/features/random-timestamp";
+import RandomUUID from "@/components/features/random-uuid";
 
 export default function Home() {
 
