@@ -65,6 +65,7 @@ export default function DrawerDialogCopyHistory({
           </DrawerTitle>
         </DrawerHeader>
         <CopyHistoryList 
+          rootClassName='overflow-auto'
           rootContentClassName='px-4'
         />
       </DrawerContent>
