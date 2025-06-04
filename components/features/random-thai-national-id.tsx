@@ -35,7 +35,7 @@ export default function RandomThaiNationalID({ rootClassName }: RandomThaiNation
   }, []);
 
   return (
-    <Card className={cn('md:min-w-[766px] md:min-h-[154px]', rootClassName)}>
+    <Card className={cn(rootClassName)}>
       <CardHeader>
         <CardTitle>Thai National ID</CardTitle>
         <CardDescription>Your Thai National ID:</CardDescription>

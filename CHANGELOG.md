@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/sdsarun/no-more-random-ad/compare/v0.3.1...v0.4.0) (2025-06-04)
+
+
+### Features
+
+* **copy-history:** add drawer dialog copy history and button trigger ([2f51e2a](https://github.com/sdsarun/no-more-random-ad/commit/2f51e2adab86baabeb46dadf442b2c96309a5000))
+* **copy-history:** change icon ([1e25299](https://github.com/sdsarun/no-more-random-ad/commit/1e25299b2887990eae38074a032574dd394ac5ef))
+* **copy-history:** show full date when more than 2 days ([f275c04](https://github.com/sdsarun/no-more-random-ad/commit/f275c04fbe7e1fd5b1bc2848a2ee653c9ef4e88f))
+* **hooks:** add useIsMobile ([e8325af](https://github.com/sdsarun/no-more-random-ad/commit/e8325afd676c7f0bbb7e59dd05b85f2425b09b85))
+* **new-layout:** new layout ([126de3c](https://github.com/sdsarun/no-more-random-ad/commit/126de3cdc3a9d212a103320def72b730b5786292))
+* **ui:** add drawer dialog ([5da7ac4](https://github.com/sdsarun/no-more-random-ad/commit/5da7ac46290b495b9bc3d8aaa7ef13897e5ac480))
+* **ui:** add popover ([dda2f38](https://github.com/sdsarun/no-more-random-ad/commit/dda2f38c50ba6a6f82efd20c0b227a55ebcb157a))
+* **ui:** add resizable ([c372a4e](https://github.com/sdsarun/no-more-random-ad/commit/c372a4e600b6ce19bce304e0566862036b35dd87))
+* **ui:** add sheet ([763fd0d](https://github.com/sdsarun/no-more-random-ad/commit/763fd0d71c888a1ae15b8399641bd817112c1287))
+* **ui:** add switch ([040cfce](https://github.com/sdsarun/no-more-random-ad/commit/040cfce7ec1ae3d26190055eb417f5e6feb63483))
+
 ### [0.3.1](https://github.com/sdsarun/no-more-random-ad/compare/v0.3.0...v0.3.1) (2025-05-31)
 
 

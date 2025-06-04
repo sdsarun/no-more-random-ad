@@ -5,13 +5,13 @@ import React, { useRef, useState } from 'react';
 
 // components
 import { Button } from '@/components/ui/button';
+import { Check, Copy } from 'lucide-react';
 
 // hooks
 import useClipboard from '@/hooks/use-clipboard';
 
 // types
 import type { CopyHistoryItem } from '@/types/copy-history';
-import { Copy, CopyCheck } from 'lucide-react';
 
 export type CopyButtonProps = React.ComponentProps<typeof Button> & {
   copyContent?: Pick<CopyHistoryItem, "content" | "contentType">;
@@ -43,7 +43,7 @@ export default function CopyButton({ copyContent, showIcon = true, showCopyText 
     >
       {isCopy ? (
         <>
-          {showIcon && <CopyCheck />}
+          {showIcon && <Check />}
           {showCopyText && 'Copied'}
         </>
       ) : (

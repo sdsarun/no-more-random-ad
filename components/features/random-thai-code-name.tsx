@@ -103,7 +103,7 @@ export default function RandomThaiCodeName({
   }, []);
 
   return (
-    <Card className={cn('md:min-w-[766px] md:min-h-[154px]', rootClassName)}>
+    <Card className={cn(rootClassName)}>
       <CardHeader>
         <CardTitle>Thai Code Name</CardTitle>
         <CardDescription>Your Thai Code Name:</CardDescription>
