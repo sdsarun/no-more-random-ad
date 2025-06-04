@@ -1,13 +1,17 @@
+import "./globals.css";
+
+// core
+import { Geist, Geist_Mono } from "next/font/google";
+
+// components
+import ToggleTheme from "@/components/common/toggle-theme";
+import ButtonDrawerDialogCopyHistory from "@/components/features/button-drawer-dialog-copy-history";
 import Providers from "@/components/providers/providers";
 import { Toaster } from "@/components/ui/sonner";
+import { Dices } from "lucide-react";
+
+// types
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import ToggleTheme from "@/components/common/toggle-theme";
-import CopyRightAndPowerBy from "@/components/common/powerby";
-import { Github } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,23 +34,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-bl dark:from-gray-900 dark:to-black flex flex-col min-h-dvh m-2`}
+        className={`antialiased bg-background flex flex-col min-h-dvh`}
       >
         <Providers>
-          <header className="self-end flex items-center">
-            <Link href="https://github.com/sdsarun/no-more-random-ad" target="_blank">
-              <Button size="icon" variant="ghost"><Github /></Button>
-            </Link>
-            <ToggleTheme />
+          <header className="flex items-center justify-between border-b-[1px] border-gray-500/10 py-2 px-4">
+            <div className="flex items-center gap-2">
+              <Dices />
+              <h3 className="font-bold">NMRA</h3>
+            </div>
+            <div className="flex items-center">
+              <ButtonDrawerDialogCopyHistory
+                buttonProps={{
+                  className: "xl:hidden"
+                }}
+              />
+              <ToggleTheme />
+            </div>
           </header>
           {children}
         </Providers>
         <Toaster />
-        <footer>
-          <CopyRightAndPowerBy />
-        </footer>
       </body>
     </html>
   );
