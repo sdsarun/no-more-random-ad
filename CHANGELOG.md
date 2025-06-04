@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.2](https://github.com/sdsarun/no-more-random-ad/compare/v0.4.1...v0.4.2) (2025-06-04)
+
+
+### Bug Fixes
+
+* **copy-history:** scroll not showing on drawer ([ae97ae9](https://github.com/sdsarun/no-more-random-ad/commit/ae97ae91c67f7dad8412ea846193ba41effb4907))
+
 ### [0.4.1](https://github.com/sdsarun/no-more-random-ad/compare/v0.4.0...v0.4.1) (2025-06-04)
 
 ## [0.4.0](https://github.com/sdsarun/no-more-random-ad/compare/v0.3.1...v0.4.0) (2025-06-04)
