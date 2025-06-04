@@ -26,7 +26,7 @@ export default function RandomUUID({ rootClassName }: RandomUUIDProps) {
   }, []);
 
   return (
-    <Card className={cn("md:min-w-[766px] md:min-h-[154px]", rootClassName)}>
+    <Card className={cn(rootClassName)}>
       <CardHeader>
         <CardTitle>UUID v4</CardTitle>
         <CardDescription>Your Version 4 UUID:</CardDescription>

@@ -58,17 +58,76 @@ export default function RandomTimestamp({
   }, []);
 
   return (
-    <Card className={cn('md:min-w-[766px] md:min-h-[154px]', rootClassName)}>
+    <Card className={cn(rootClassName)}>
       <CardHeader>
         <CardTitle>Timestamp</CardTitle>
         <CardDescription>Your Timestamp:</CardDescription>
       </CardHeader>
-      <CardContent className='flex items-center justify-between gap-2'>
-        <div className='flex-1 flex flex-col  md:justify-between gap-4'>
-          <div className='flex-2 w-full flex gap-2'>
-            <div className='flex flex-col'>
+      <CardContent className='flex flex-col gap-4 md:flex-row md:items-start'>
+        <div className='flex-1 flex flex-col gap-4'>
+          <div className='w-full flex flex-col gap-4 md:flex-row'>
+            <div className='flex flex-col gap-4 overflow-x-auto'>
+              <div className="grid grid-cols-2 gap-2">
+                <Button
+                  className='col-span-full'
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    const now = new Date();
+                    form.setValue("selectedDate", now);
+                    randomTimestamp({ ...form.getValues(), selectedDate: now });
+                  }}
+                >
+                  Current Time
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    const date = dayjs(selectedDate).subtract(1, 'minute').toDate();
+                    form.setValue("selectedDate", date);
+                    randomTimestamp({ ...form.getValues(), selectedDate: date });
+                  }}
+                >
+                  -1 Minute
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    const date = dayjs(selectedDate).add(1, 'minute').toDate();
+                    form.setValue("selectedDate", date);
+                    randomTimestamp({ ...form.getValues(), selectedDate: date });
+                  }}
+                >
+                  +1 Minute
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    const date = dayjs().subtract(1, 'hour').toDate();
+                    form.setValue("selectedDate", date);
+                    randomTimestamp({ ...form.getValues(), selectedDate: date });
+                  }}
+                >
+                  1 Hour Ago
+                </Button>
+
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    const date = dayjs().add(1, 'hour').toDate();
+                    form.setValue("selectedDate", date);
+                    randomTimestamp({ ...form.getValues(), selectedDate: date });
+                  }}
+                >
+                  1 Hour Later
+                </Button>
+              </div>
               <Calendar
-                className='p-0 self-center'
+                className='p-0 mx-auto'
                 mode='single'
                 selected={selectedDate}
                 onSelect={(date) => {
@@ -86,7 +145,7 @@ export default function RandomTimestamp({
                   randomTimestamp({ ...form.getValues(), selectedDate: updatedDate });
                 }}
               />
-              <div className='flex items-center gap-2'>
+              <div className='flex flex-col md:flex-row items-start md:items-center gap-2 w-full'>
                 <Label htmlFor='time'>Time: </Label>
                 <Input
                   id='time'
@@ -107,7 +166,7 @@ export default function RandomTimestamp({
             </div>
             <div className='flex-1 flex flex-col gap-4'>
               <div className='flex flex-col gap-4'>
-                <div className='flex items-center gap-2 flex-wrap'>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 max-h-[300px] overflow-y-auto">
                   {[
                     'YYYY-MM-DD HH:mm:ssZ',           // ISO-like with timezone offset (Postgres style)
                     'YYYY-MM-DD',                     // ISO Date only
@@ -121,6 +180,8 @@ export default function RandomTimestamp({
                     '[Show text as-is in brackets] [Hello, World!] YYYY-MM-DDTHH:mm:ssZ',
                   ].map((inputDateFormat) => (
                     <Button
+                      title={inputDateFormat}
+                      className="w-full px-2 py-1 min-h-[2.5rem] text-left truncate"
                       key={inputDateFormat}
                       variant="secondary"
                       size="sm"
@@ -147,7 +208,7 @@ export default function RandomTimestamp({
                 }}
                 max={100}
               />
-              <div className='flex items-center gap-2'>
+              <div className='flex flex-col md:flex-row gap-2 w-full'>
                 <div className="w-full">
                   <Code>{formattedTimestamp}</Code>
                 </div>
