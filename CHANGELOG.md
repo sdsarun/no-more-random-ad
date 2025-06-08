@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.3](https://github.com/sdsarun/no-more-random-ad/compare/v0.4.2...v0.4.3) (2025-06-08)
+
+
+### Features
+
+* **copy-history:** add remark history ([9106d5a](https://github.com/sdsarun/no-more-random-ad/commit/9106d5acb1dccd1d220f110ccda0b0d3466ccda6))
+
 ### [0.4.2](https://github.com/sdsarun/no-more-random-ad/compare/v0.4.1...v0.4.2) (2025-06-04)
 
 
