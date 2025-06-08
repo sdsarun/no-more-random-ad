@@ -3,4 +3,5 @@ export type CopyHistoryItem = {
   content: any;
   contentType: string;
   copyAt: Date;
+  remark?: string | null;
 }
