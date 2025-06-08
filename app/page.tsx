@@ -25,6 +25,9 @@ export default function Home() {
       <aside className="h-full bg-transparent hidden xl:block">
         <CopyHistory
           rootClassName="h-full overflow-auto bg-transparent rounded-none border-none"
+          copyHistoryListProps={{
+            rootContentClassName: "max-w-[295px]"
+          }}
         />
       </aside>
     </div>
